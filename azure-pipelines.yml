@@ -1,0 +1,17 @@
+trigger:
+  - main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: "<Your Azure Subscription>"
+      scriptType: "bash"
+      scriptLocation: "inlineScript"
+      inlineScript: |
+        az deployment group create \
+          --resource-group <Your Resource Group> \
+          --template-file main.bicep \
+          --parameters logicAppName=<Your Logic App Name>
