@@ -1,4 +1,4 @@
-param logicAppName string
+param logicAppName string = 'LogicApp_bicepdeploy'
 param location string = resourceGroup().location
 
 resource logicApp 'Microsoft.Logic/workflows@2016-06-01' = {

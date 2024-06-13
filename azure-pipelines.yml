@@ -7,11 +7,11 @@ pool:
 steps:
   - task: AzureCLI@2
     inputs:
-      azureSubscription: "<Your Azure Subscription>"
+      azureSubscription: "LogicAppviaBicep"
       scriptType: "bash"
       scriptLocation: "inlineScript"
       inlineScript: |
         az deployment group create \
-          --resource-group <Your Resource Group> \
+          --resource-group Casestudy_ASBtoSQL \
           --template-file main.bicep \
-          --parameters logicAppName=<Your Logic App Name>
+          --parameters logicAppName=LogicApp_bicepdeploy
